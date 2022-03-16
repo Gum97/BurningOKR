@@ -14,6 +14,9 @@ import { CompanyApiService } from '../../shared/services/api/company-api.service
 import { CompanyMapper } from '../../shared/services/mapper/company.mapper';
 import { CycleMapper } from '../../shared/services/mapper/cycle.mapper';
 import { OkrUnitFormComponent } from '../okr-unit-form/okr-unit-form.component';
+import { Observable } from 'rxjs';
+import { OkrDepartment } from '../../shared/model/ui/OrganizationalUnit/okr-department';
+import { DepartmentMapper } from '../../shared/services/mapper/department.mapper';
 
 @Component({
   selector: 'app-okr-unit-card',
@@ -30,6 +33,7 @@ export class OkrUnitCardComponent implements OnInit {
   activeCycle: CycleUnit;
   isCurrentUserAdmin = false;
   isPlayground: boolean = environment.playground;
+  departmentSchema$: Observable<OkrDepartment[]>;
 
   constructor(
     private cycleMapper: CycleMapper,
@@ -39,6 +43,7 @@ export class OkrUnitCardComponent implements OnInit {
     private router: Router,
     private currentUserService: CurrentUserService,
     private translate: TranslateService,
+    private departmentSchemaMapperService: DepartmentMapper
   ) {
   }
 
@@ -54,6 +59,7 @@ export class OkrUnitCardComponent implements OnInit {
         this.activeCycle = cycle;
       });
     this.loadCyclesWithHistoryCompanies$();
+    this.departmentSchema$ = this.departmentSchemaMapperService.getAllDepartmentsForCompanyFlatted$(this.company.id);
   }
 
   selectCompany(): void {

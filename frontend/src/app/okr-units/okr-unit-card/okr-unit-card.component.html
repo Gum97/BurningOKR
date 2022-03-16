@@ -23,7 +23,10 @@
       </ng-template>
     </mat-card-title>
     <mat-card-subtitle>
-      <span>{{'okr-unit-card.mat-card-subtitle.unit-structure' | translate}} - {{company.label}}</span>
+      <div style="display: flex">
+        <div>{{'okr-unit-card.mat-card-subtitle.unit-structure' | translate}} - {{company.label}}</div>
+        <app-objective-result-chart [departmentSchema$]='departmentSchema$'></app-objective-result-chart>
+      </div>
     </mat-card-subtitle>
   </span>
   <mat-card-actions class="item-actions">

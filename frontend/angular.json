@@ -33,8 +33,7 @@
               "src/silent-refresh.html"
             ],
             "styles": [
-              "src/styles/app.scss",
-              "node_modules/animate.css/animate.css"
+              "src/styles/app.scss"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -128,7 +127,8 @@
               "scripts": [
                 "node_modules/wowjs/dist/wow.js",
                 "src/config.js",
-                "src/klaro.js"
+                "src/klaro.js",
+                "node_modules/apexcharts/dist/apexcharts.min.js"
               ]
             },
             "docker": {

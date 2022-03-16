@@ -19,12 +19,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { OkrUnitFormComponent } from './okr-unit-form/okr-unit-form.component';
 import { DemoModule } from '../demo/demo.module';
 import {TranslateModule} from '@ngx-translate/core';
+import { ObjectiveResultChartComponent } from './objective-result-chart/objective-result-chart.component';
+import {NgApexchartsModule} from "ng-apexcharts";
 
 @NgModule({
   declarations: [
     OkrUnitCardComponent,
     OkrUnitDashboardComponent,
     OkrUnitFormComponent,
+    ObjectiveResultChartComponent,
   ],
     imports: [
         SharedModule,
@@ -45,6 +48,7 @@ import {TranslateModule} from '@ngx-translate/core';
         MatInputModule,
         DemoModule,
         TranslateModule,
+        NgApexchartsModule,
     ],
   entryComponents: [
     OkrUnitFormComponent,

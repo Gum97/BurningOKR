@@ -1,0 +1,39 @@
+<div style="display: flex;
+position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);">
+  <div class="bgBox">
+    <div id="legText">Legende</div>
+    <div class="colorSmallBox colorToDo"><div class="colorLegText">ToDo</div></div>
+    <div class="colorSmallBox colorDone"><div class="colorLegText">Done</div></div>
+  </div>
+  <div class="charts" *ngFor="let department of departmentSchema$ | async; index as i;">
+    <!--div style="background-color: #1da1f2">{{setArray(department.objectives[department.objectives.length-1], 400 - department.objectives[department.objectives.length-1])}}</div-->
+    <div id="chart">
+      <apx-chart
+        [colors]="chartOptions.colors"
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [legend]="chartOptions.legend"
+      ></apx-chart>
+      <div style="font-weight: bolder; color: black; text-align: center">{{department.name}}</div>
+      <div style="font-weight: bolder; text-align: center">{{department.objectives.length}} Objectives</div>
+      <div style="font-weight: bolder; text-align: center">{{department.objectives[department.objectives.length-1]}}</div>
+    </div>
+  </div>
+  <div>
+    <div class="circle off-track" style="margin-top: 40px;">
+      <mat-icon matTooltip="{{'objektive.tooltip.bad-progress' | translate }}">trending_down</mat-icon>
+    </div>
+    <div style="text-align: center; font-weight: bolder">Tendenz <br>Global</div>
+  </div>
+  <div style="margin-top: 55px; margin-left: 20px; color: black; height: 40px; font-weight: bold">
+    <div>Anzahl Mitarbeiter: {{getNumberOfEmployees()}}</div>
+    <div>Anzahl Unterstrukturen: {{getNumberOfEmployees()}}</div>
+  </div>
+</div>
+

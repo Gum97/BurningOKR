@@ -1,0 +1,53 @@
+.bgBox {
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 120px;
+  height: 80px;
+  //background-color: lightgray;
+  color: black;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+#legText {
+  padding-top: 5px;
+  margin-left: 10px;
+}
+.colorSmallBox {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.colorToDo {
+  background-color: #546E7A;
+}
+.colorDone {
+  background-color: #c20848;
+}
+.colorLegText {
+  margin-left: 30px;
+}
+#chart {
+  max-width: 140px;
+  max-height: 140px;
+  margin: 5px auto;
+  padding: 0;
+}
+.charts {
+  align-content: center;
+}
+.off-track{
+  background: #ff6666;
+  color: black;
+}
+.circle{
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 4px 8px rgba(0,0,0,0.3);
+}
